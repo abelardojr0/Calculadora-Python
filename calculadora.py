@@ -11,7 +11,7 @@ cor5 = "#ffab40"
 # ESTRUTURA DA JANELA
 janela = Tk()
 janela.title("Calculadora")
-janela.geometry("440x530")
+janela.geometry("440x620")
 janela.config(bg=cor1)
 
 
@@ -21,7 +21,7 @@ input_janela = Frame(janela, width=440, height=80, bg=cor3)
 input_janela.grid(row=0, column=0)
 
 #PARTE DE BAIXO ONDE FICAM OS BOTÕES
-corpo_janela = Frame(janela, width=440, height=530)
+corpo_janela = Frame(janela, width=440, height=540)
 corpo_janela.grid(row=1, column=0)
 
 
@@ -55,7 +55,7 @@ def entrar_valores(event): #CONTROLE DO INPUT DOS NÚMEROS DIGITADOS
         valor_texto.set(todos_valores)   #ATUALIZO O TEXTO MOSTRADO NA TELA
         
         
-    if(operacoes and event == "+" or event == "-" or event == "*" or event == "/"): # SE O CARA ACABOU DE USAR UM OPERADOR, E JÁ É A SEGUNDA OPERAÇÃO, OU SEJA, UM NUMÉRO DEPOIS DE UMA OPERAÇÃO MATEMÁTICA
+    if(operacoes and event == "+" or event == "-" or event == "*" or event == "/" or event == "**" or event == "//"): # SE O CARA ACABOU DE USAR UM OPERADOR, E JÁ É A SEGUNDA OPERAÇÃO, OU SEJA, UM NUMÉRO DEPOIS DE UMA OPERAÇÃO MATEMÁTICA
         calcular() # EU CHAMO A FUNÇÃO PARA CALCULAR EM VEZ DE SAIR ADICIONANDO
 
 #FUNÇÃO QUE CALCULA
@@ -106,49 +106,54 @@ app_label.place(x=0,y=0)
 
 
 # BOTÕES
-B1 = Button(corpo_janela, command= limpar, text="C", width=21, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
+B1 = Button(corpo_janela, command= limpar, text="C", width=44, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
 B1.place(x=0, y=0)
+
 B2 = Button(corpo_janela, command= apagarDigito, text="⌫", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B2.place(x=220, y=0)
+B2.place(x=0, y=90)
+B20 = Button(corpo_janela, command= lambda: entrar_valores("**"), text="x²", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
+B20.place(x=110, y=90)
+B21 = Button(corpo_janela, command= lambda: entrar_valores("**(1/2)"), text="√", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
+B21.place(x=220, y=90)
 B3 = Button(corpo_janela, command= lambda: entrar_valores("/"), text="/", width=10, height=4, bg=cor5, fg=cor2, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B3.place(x=330, y=0)
+B3.place(x=330, y=90)
 
 B4 = Button(corpo_janela, command= lambda: entrar_valores("7"), text="7", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B4.place(x=0, y=90)
+B4.place(x=0, y=180)
 B5 = Button(corpo_janela, command= lambda: entrar_valores("8"), text="8", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B5.place(x=110, y=90)
+B5.place(x=110, y=180)
 B6 = Button(corpo_janela, command= lambda: entrar_valores("9"), text="9", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B6.place(x=220, y=90)
+B6.place(x=220, y=180)
 B7 = Button(corpo_janela, command= lambda: entrar_valores("*"), text="*", width=10, height=4, bg=cor5, fg=cor2, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B7.place(x=330, y=90)
+B7.place(x=330, y=180)
 
 
 B8 = Button(corpo_janela, command= lambda: entrar_valores("4"), text="4", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B8.place(x=0, y=180)
+B8.place(x=0, y=270)
 B9 = Button(corpo_janela, command= lambda: entrar_valores("5"), text="5", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B9.place(x=110, y=180)
+B9.place(x=110, y=270)
 B10 = Button(corpo_janela, command= lambda: entrar_valores("6"), text="6", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B10.place(x=220, y=180)
+B10.place(x=220, y=270)
 B11 = Button(corpo_janela, command= lambda: entrar_valores("-"), text="-", width=10, height=4, bg=cor5, fg=cor2, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B11.place(x=330, y=180)
+B11.place(x=330, y=270)
 
 
 B12 = Button(corpo_janela, command= lambda: entrar_valores("1"), text="1", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B12.place(x=0, y=270)
+B12.place(x=0, y=360)
 B13 = Button(corpo_janela, command= lambda: entrar_valores("2"), text="2", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B13.place(x=110, y=270)
+B13.place(x=110, y=360)
 B14 = Button(corpo_janela, command= lambda: entrar_valores("3"), text="3", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B14.place(x=220, y=270)
+B14.place(x=220, y=360)
 B15 = Button(corpo_janela, command= lambda: entrar_valores("+"), text="+", width=10, height=4, bg=cor5, fg=cor2, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B15.place(x=330, y=270)
+B15.place(x=330, y=360)
 
 
 B16 = Button(corpo_janela, command= lambda: entrar_valores("0"), text="0", width=21, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B16.place(x=0, y=360)
+B16.place(x=0, y=450)
 B17 = Button(corpo_janela, command= lambda: entrar_valores("."), text=".", width=10, height=4, bg=cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B17.place(x=220, y=360)
+B17.place(x=220, y=450)
 B18 = Button(corpo_janela, command= calcular, text="=", width=10, height=4, bg=cor5, fg=cor2, font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-B18.place(x=330, y=360)
+B18.place(x=330, y=450)
 
 
 janela.mainloop()
