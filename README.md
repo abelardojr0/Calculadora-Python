@@ -13,14 +13,7 @@ Projeto desenvolvido para praticar conhecimentos adquiridos em Python.
 
 ![calculadora](https://user-images.githubusercontent.com/106066785/209393699-1f31376d-22ef-4c08-999f-a9bb4144e891.png)
 
-
-# :hammer: Funcionalidades do Projeto
-
-- `Funcionalidade 1`: Cálculos
-
-
-# :pushpin: Projeto em Execução
-
+# :hammer: Projeto em Execução
 
 https://user-images.githubusercontent.com/106066785/209393916-eed440d1-bc6f-4584-9e89-5e93da170c5d.mp4
 
